@@ -1,7 +1,7 @@
 package com.carrental.entity;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -10,10 +10,13 @@ import javax.persistence.TemporalType;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
+
+    @Column(name = "STATUS")
+    private Long status;
 
     @Column(name = "CREATED_BY")
     private String createdBy;

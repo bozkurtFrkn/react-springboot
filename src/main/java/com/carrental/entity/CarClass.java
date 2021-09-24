@@ -4,6 +4,7 @@ package com.carrental.entity;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "CAR_CLASS")
 public class CarClass extends BaseEntity {
     @Id
@@ -39,8 +41,4 @@ public class CarClass extends BaseEntity {
     @NotNull
     @Column(name = "LIMIT_OF_KM")
     private Long limitOfKm;
-
-    @NotNull
-    @Column(name = "STATUS")
-    private Long status;
 }

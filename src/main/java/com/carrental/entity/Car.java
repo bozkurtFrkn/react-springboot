@@ -4,6 +4,7 @@ package com.carrental.entity;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "CAR")
 public class Car extends BaseEntity {
     @Id
@@ -75,8 +77,4 @@ public class Car extends BaseEntity {
     @NotNull
     @Column(name = "DEPOSIT")
     private BigDecimal deposit;
-
-    @NotNull
-    @Column(name = "STATUS")
-    private Long status;
 }
