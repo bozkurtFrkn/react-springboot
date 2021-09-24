@@ -1,4 +1,4 @@
-package com.ulusoy.carrental;
+package com.carrental;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,6 +8,7 @@ class CarRentalApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

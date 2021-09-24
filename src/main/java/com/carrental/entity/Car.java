@@ -1,4 +1,4 @@
-package com.ulusoy.carrental.entity;
+package com.carrental.entity;
 
 
 import lombok.AllArgsConstructor;
