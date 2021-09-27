@@ -35,7 +35,7 @@ public class CarClass extends BaseEntity {
     private Long minAge;
 
     @NotNull
-    @Column(name = "minLicenseYear")
+    @Column(name = "MIN_LICANSE_YEAR")
     private Long minLicenseYear;
 
     @NotNull

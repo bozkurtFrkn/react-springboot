@@ -8,7 +8,9 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -21,14 +23,12 @@ public abstract class BaseEntity implements Serializable {
     @Column(name = "CREATED_BY")
     private String createdBy;
 
-    @Temporal(TemporalType.DATE)
     @Column(name = "CREATION_DATE")
-    private LocalDateTime creationDate;
+    private LocalDate creationDate;
 
-    @Column(name = "UPDATE_BY")
-    private String updateBy;
+    @Column(name = "UPDATED_BY")
+    private String updatedBy;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "UPDATE_DATE")
-    private LocalDateTime updateDate;
+    @Column(name = "UPDATED_DATE")
+    private LocalDate updatedDate;
 }
