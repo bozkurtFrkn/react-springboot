@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "CUSTOMER")
+@Entity
 public class Customer extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CustomerIdSeq")
@@ -39,7 +40,6 @@ public class Customer extends BaseEntity {
     private String surname;
 
     @NotNull
-    @Temporal(TemporalType.DATE)
     @Column(name = "BIRTH_DATE")
     private LocalDateTime birthDate;
 

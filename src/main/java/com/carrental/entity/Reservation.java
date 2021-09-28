@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "RESERVATION")
+@Entity
 public class Reservation extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ReservationIdSeq")
@@ -36,7 +37,6 @@ public class Reservation extends BaseEntity {
     private Long pickupLocationId;
 
     @NotNull
-    @Temporal(TemporalType.DATE)
     @Column(name = "PICKUP_DATE")
     private LocalDateTime pickupDate;
 
@@ -45,7 +45,6 @@ public class Reservation extends BaseEntity {
     private Long returnLocationId;
 
     @NotNull
-    @Temporal(TemporalType.DATE)
     @Column(name = "RETURN_DATE")
     private LocalDateTime returnDate;
 

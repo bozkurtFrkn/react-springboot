@@ -5,12 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -24,11 +20,11 @@ public abstract class BaseEntity implements Serializable {
     private String createdBy;
 
     @Column(name = "CREATION_DATE")
-    private LocalDate creationDate;
+    private LocalDateTime creationDate;
 
     @Column(name = "UPDATED_BY")
     private String updatedBy;
 
     @Column(name = "UPDATED_DATE")
-    private LocalDate updatedDate;
+    private LocalDateTime updatedDate;
 }

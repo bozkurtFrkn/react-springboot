@@ -14,6 +14,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "OFFICE")
+@Entity
 public class Office extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "OfficeIdSeq")
