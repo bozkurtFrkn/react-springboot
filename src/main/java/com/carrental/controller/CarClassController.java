@@ -12,34 +12,34 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/CarClass")
 public class CarClassController {
 
     @Autowired
     private CarClassService carClassService;
 
-    @GetMapping("/getAllCarClass")
-    public ResponseEntity<?> getAllCarClass() {
-        return Util.responseBody("/getAllCarClass", "AllCarClass", new ArrayList<>(Arrays.asList(carClassService.getAllCarClass())));
+    @GetMapping("/getAll")
+    public ResponseEntity<?> getAll() {
+        return Util.responseBody("/getAll", "AllCarClass", new ArrayList<>(Arrays.asList(carClassService.getAllCarClass())));
     }
 
-    @GetMapping("/getCarClass")
-    public ResponseEntity<?> getCarClass(@RequestParam Long classId) {
-        return Util.responseBody("/getCarClass", "CarClass", new ArrayList<>(Arrays.asList(carClassService.getCarClass(classId))));
+    @GetMapping("/getById")
+    public ResponseEntity<?> getById(@RequestParam Long classId) {
+        return Util.responseBody("/getById", "CarClass", new ArrayList<>(Arrays.asList(carClassService.getCarClass(classId))));
     }
 
-    @PostMapping("/saveCarClass")
-    public ResponseEntity<?> saveCarClass(@RequestBody @Validated CarClass carClass) {
-        return Util.responseBody("/saveCarClass", "SaveCarClass", new ArrayList<>(Arrays.asList(carClassService.save(carClass))));
+    @PostMapping("/save")
+    public ResponseEntity<?> save(@RequestBody @Validated CarClass carClass) {
+        return Util.responseBody("/save", "SaveCarClass", new ArrayList<>(Arrays.asList(carClassService.save(carClass))));
     }
 
-    @PutMapping("/updateCarClass")
-    public ResponseEntity<?> updateCarClass(@RequestBody @Validated CarClass carClass) {
-        return Util.responseBody("/updateCarClass", "UpdateCarClass", new ArrayList<>(Arrays.asList(carClassService.update(carClass))));
+    @PutMapping("/update")
+    public ResponseEntity<?> update(@RequestBody @Validated CarClass carClass) {
+        return Util.responseBody("/update", "UpdateCarClass", new ArrayList<>(Arrays.asList(carClassService.update(carClass))));
     }
 
-    @DeleteMapping("/deleteCarClass")
-    public void deleteCarClass(@RequestBody @Validated CarClass carClass) {
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody @Validated CarClass carClass) {
         carClassService.delete(carClass);
     }
 }

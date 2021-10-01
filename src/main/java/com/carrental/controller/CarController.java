@@ -12,33 +12,33 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/Car")
 public class CarController {
     @Autowired
     private CarService carService;
 
-    @GetMapping("/getAllCars")
-    public ResponseEntity<?> getAllCars() {
-        return Util.responseBody("/getAllCars", "AllCars", new ArrayList<>(Arrays.asList(carService.getAllCars())));
+    @GetMapping("/getAll")
+    public ResponseEntity<?> getAll() {
+        return Util.responseBody("/getAll", "AllCars", new ArrayList<>(Arrays.asList(carService.getAllCars())));
     }
 
-    @GetMapping("/getCar")
-    public ResponseEntity<?> getCar(@RequestParam Long carId) {
-        return Util.responseBody("/getAllCars", "Car", new ArrayList<>(Arrays.asList(carService.getCar(carId))));
+    @GetMapping("/getById")
+    public ResponseEntity<?> getById(@RequestParam Long carId) {
+        return Util.responseBody("/getById", "Car", new ArrayList<>(Arrays.asList(carService.getCar(carId))));
     }
 
-    @PostMapping("/saveCar")
-    public ResponseEntity<?> saveCar(@RequestBody @Validated Car car) {
-        return Util.responseBody("/saveCar", "SaveCar", new ArrayList<>(Arrays.asList(carService.save(car))));
+    @PostMapping("/save")
+    public ResponseEntity<?> save(@RequestBody @Validated Car car) {
+        return Util.responseBody("/save", "SaveCar", new ArrayList<>(Arrays.asList(carService.save(car))));
     }
 
-    @PutMapping("/updateCar")
-    public ResponseEntity<?> updateCar(@RequestBody @Validated Car car) {
-        return Util.responseBody("/saveCar", "UpdateCar", new ArrayList<>(Arrays.asList(carService.update(car))));
+    @PutMapping("/update")
+    public ResponseEntity<?> update(@RequestBody @Validated Car car) {
+        return Util.responseBody("/update", "UpdateCar", new ArrayList<>(Arrays.asList(carService.update(car))));
     }
 
-    @DeleteMapping("/deleteCar")
-    public void deleteCar(@RequestBody @Validated Car car) {
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody @Validated Car car) {
         carService.delete(car);
     }
 }
