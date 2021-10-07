@@ -14,11 +14,11 @@ public class OfficeService {
     @Autowired
     private OfficeRepository officeRepository;
 
-    public List<Office> getAllOffice() {
+    public List<Office> getAll() {
         return officeRepository.findAllByStatus(1L);
     }
 
-    public Office getOffice(Long officeId) {
+    public Office getById(Long officeId) {
         return officeRepository.findByOfficeId(officeId);
     }
 

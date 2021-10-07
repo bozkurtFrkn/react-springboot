@@ -1,8 +1,6 @@
 package com.carrental.controller;
 
-import com.carrental.entity.CarClass;
 import com.carrental.entity.Office;
-import com.carrental.service.CarClassService;
 import com.carrental.service.OfficeService;
 import com.carrental.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,22 +20,22 @@ public class OfficeController {
 
     @GetMapping("/getAll")
     public ResponseEntity<?> getAll() {
-        return Util.responseBody("/getAll", "AllOffice", new ArrayList<>(Arrays.asList(officeService.getAllOffice())));
+        return Util.responseBody("/getAll", "Officies", new ArrayList<>(Arrays.asList(officeService.getAll())));
     }
 
     @GetMapping("/getById")
     public ResponseEntity<?> getById(@RequestParam Long officeId) {
-        return Util.responseBody("/getById", "Office", new ArrayList<>(Arrays.asList(officeService.getOffice(officeId))));
+        return Util.responseBody("/getById", "Office", new ArrayList<>(Arrays.asList(officeService.getById(officeId))));
     }
 
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody @Validated Office office) {
-        return Util.responseBody("/save", "SaveOffice", new ArrayList<>(Arrays.asList(officeService.save(office))));
+        return Util.responseBody("/save", "Office", new ArrayList<>(Arrays.asList(officeService.save(office))));
     }
 
     @PutMapping("/update")
     public ResponseEntity<?> update(@RequestBody @Validated Office office) {
-        return Util.responseBody("/update", "UpdateOffice", new ArrayList<>(Arrays.asList(officeService.update(office))));
+        return Util.responseBody("/update", "Office", new ArrayList<>(Arrays.asList(officeService.update(office))));
     }
 
     @DeleteMapping("/delete")

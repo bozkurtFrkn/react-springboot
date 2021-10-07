@@ -13,11 +13,11 @@ public class CarService {
     @Autowired
     private CarRepository carRepository;
 
-    public List<Car> getAllCars() {
+    public List<Car> getAll() {
         return carRepository.findAllByStatus(1L);
     }
 
-    public Car getCar(Long carId) {
+    public Car getById(Long carId) {
         return carRepository.findByCarId(carId);
     }
 

@@ -13,7 +13,7 @@ public class ParameterService {
     @Autowired
     private ParameterRepository parameterRepository;
 
-    public List<Parameter> getAllParameters() {
+    public List<Parameter> getAll() {
         return parameterRepository.findAllByStatus(1L);
     }
 

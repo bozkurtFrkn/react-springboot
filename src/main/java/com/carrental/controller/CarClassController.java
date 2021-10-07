@@ -20,22 +20,22 @@ public class CarClassController {
 
     @GetMapping("/getAll")
     public ResponseEntity<?> getAll() {
-        return Util.responseBody("/getAll", "AllCarClass", new ArrayList<>(Arrays.asList(carClassService.getAllCarClass())));
+        return Util.responseBody("/getAll", "CarClasses", new ArrayList<>(Arrays.asList(carClassService.getAll())));
     }
 
     @GetMapping("/getById")
     public ResponseEntity<?> getById(@RequestParam Long classId) {
-        return Util.responseBody("/getById", "CarClass", new ArrayList<>(Arrays.asList(carClassService.getCarClass(classId))));
+        return Util.responseBody("/getById", "CarClass", new ArrayList<>(Arrays.asList(carClassService.getById(classId))));
     }
 
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody @Validated CarClass carClass) {
-        return Util.responseBody("/save", "SaveCarClass", new ArrayList<>(Arrays.asList(carClassService.save(carClass))));
+        return Util.responseBody("/save", "CarClass", new ArrayList<>(Arrays.asList(carClassService.save(carClass))));
     }
 
     @PutMapping("/update")
     public ResponseEntity<?> update(@RequestBody @Validated CarClass carClass) {
-        return Util.responseBody("/update", "UpdateCarClass", new ArrayList<>(Arrays.asList(carClassService.update(carClass))));
+        return Util.responseBody("/update", "CarClass", new ArrayList<>(Arrays.asList(carClassService.update(carClass))));
     }
 
     @DeleteMapping("/delete")

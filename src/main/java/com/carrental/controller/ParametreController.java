@@ -1,8 +1,6 @@
 package com.carrental.controller;
 
-import com.carrental.entity.Car;
 import com.carrental.entity.Parameter;
-import com.carrental.service.CarService;
 import com.carrental.service.ParameterService;
 import com.carrental.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +19,17 @@ public class ParametreController {
 
     @GetMapping("/getAll")
     public ResponseEntity<?> getAll() {
-        return Util.responseBody("/getAll", "AllParameters", new ArrayList<>(Arrays.asList(parameterService.getAllParameters())));
+        return Util.responseBody("/getAll", "Parameters", new ArrayList<>(Arrays.asList(parameterService.getAll())));
     }
 
     @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody @Validated Parameter parameter) {
-        return Util.responseBody("/save", "SaveParameter", new ArrayList<>(Arrays.asList(parameterService.save(parameter))));
+        return Util.responseBody("/save", "Parameter", new ArrayList<>(Arrays.asList(parameterService.save(parameter))));
     }
 
     @PutMapping("/update")
     public ResponseEntity<?> update(@RequestBody @Validated Parameter parameter) {
-        return Util.responseBody("/update", "UpdateParameter", new ArrayList<>(Arrays.asList(parameterService.update(parameter))));
+        return Util.responseBody("/update", "Parameter", new ArrayList<>(Arrays.asList(parameterService.update(parameter))));
     }
 
     @DeleteMapping("/delete")
