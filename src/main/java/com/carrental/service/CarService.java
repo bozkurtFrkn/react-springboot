@@ -17,7 +17,7 @@ public class CarService {
         return carRepository.findAllByStatus(1L);
     }
 
-    public Car getById(Long carId) {
+    public Car findById(Long carId) {
         return carRepository.findByCarId(carId);
     }
 

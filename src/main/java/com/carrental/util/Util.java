@@ -1,13 +1,20 @@
 package com.carrental.util;
 
+import com.carrental.auth.UserDetail;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Util {
+
+    public static String getActiveUsername() {
+        UserDetail authUser = (UserDetail) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return authUser.getUsername();
+    }
 
     public static boolean isNullOrEmpty(Object o) {
         if (o == null) {

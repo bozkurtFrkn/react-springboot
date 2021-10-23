@@ -22,9 +22,9 @@ public class CarController {
         return Util.responseBody("/getAll", "Cars", new ArrayList<>(Arrays.asList(carService.getAll())));
     }
 
-    @GetMapping("/getById")
-    public ResponseEntity<?> getById(@RequestParam Long carId) {
-        return Util.responseBody("/getById", "Car", new ArrayList<>(Arrays.asList(carService.getById(carId))));
+    @GetMapping("/findById")
+    public ResponseEntity<?> findById(@RequestParam Long carId) {
+        return Util.responseBody("/findById", "Car", new ArrayList<>(Arrays.asList(carService.findById(carId))));
     }
 
     @PostMapping("/save")

@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @Data
 @NoArgsConstructor
@@ -26,6 +27,7 @@ public class User extends BaseEntity {
     @Column(name = "USERNAME")
     private String username;
 
+    @Pattern(regexp = "^(.+)@(.+)$", message = "Mail uygun degil !!", groups = User.class)
     @NotNull
     @Column(name = "MAIL")
     private String mail;

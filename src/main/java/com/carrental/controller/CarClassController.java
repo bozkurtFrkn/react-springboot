@@ -23,9 +23,9 @@ public class CarClassController {
         return Util.responseBody("/getAll", "CarClasses", new ArrayList<>(Arrays.asList(carClassService.getAll())));
     }
 
-    @GetMapping("/getById")
-    public ResponseEntity<?> getById(@RequestParam Long classId) {
-        return Util.responseBody("/getById", "CarClass", new ArrayList<>(Arrays.asList(carClassService.getById(classId))));
+    @GetMapping("/findById")
+    public ResponseEntity<?> findById(@RequestParam Long classId) {
+        return Util.responseBody("/findById", "CarClass", new ArrayList<>(Arrays.asList(carClassService.findById(classId))));
     }
 
     @PostMapping("/save")

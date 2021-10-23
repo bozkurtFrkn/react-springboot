@@ -22,9 +22,9 @@ public class CustomerController {
         return Util.responseBody("/getAll", "Customers", new ArrayList<>(Arrays.asList(customerService.getAll())));
     }
 
-    @GetMapping("/getById")
-    public ResponseEntity<?> getById(@RequestParam Long customerId) {
-        return Util.responseBody("/getById", "Customer", new ArrayList<>(Arrays.asList(customerService.getById(customerId))));
+    @GetMapping("/findById")
+    public ResponseEntity<?> findById(@RequestParam Long customerId) {
+        return Util.responseBody("/findById", "Customer", new ArrayList<>(Arrays.asList(customerService.findById(customerId))));
     }
 
     @PostMapping("/save")

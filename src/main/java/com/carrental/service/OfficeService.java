@@ -18,7 +18,7 @@ public class OfficeService {
         return officeRepository.findAllByStatus(1L);
     }
 
-    public Office getById(Long officeId) {
+    public Office findById(Long officeId) {
         return officeRepository.findByOfficeId(officeId);
     }
 

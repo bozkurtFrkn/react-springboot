@@ -23,9 +23,9 @@ public class OfficeController {
         return Util.responseBody("/getAll", "Officies", new ArrayList<>(Arrays.asList(officeService.getAll())));
     }
 
-    @GetMapping("/getById")
-    public ResponseEntity<?> getById(@RequestParam Long officeId) {
-        return Util.responseBody("/getById", "Office", new ArrayList<>(Arrays.asList(officeService.getById(officeId))));
+    @GetMapping("/findById")
+    public ResponseEntity<?> findById(@RequestParam Long officeId) {
+        return Util.responseBody("/findById", "Office", new ArrayList<>(Arrays.asList(officeService.findById(officeId))));
     }
 
     @PostMapping("/save")

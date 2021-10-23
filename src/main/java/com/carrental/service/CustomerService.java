@@ -17,7 +17,7 @@ public class CustomerService {
         return customerRepository.findAllByStatus(1L);
     }
 
-    public Customer getById(Long customerId) {
+    public Customer findById(Long customerId) {
         return customerRepository.findByCustomerId(customerId);
     }
 

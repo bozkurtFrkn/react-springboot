@@ -18,7 +18,7 @@ public class ReservationService {
         return reservationRepository.findAllByStatus(1L);
     }
 
-    public Reservation getById(Long reservationId) {
+    public Reservation findById(Long reservationId) {
         return reservationRepository.findByReservationId(reservationId);
     }
 

@@ -23,9 +23,9 @@ public class UserController {
         return Util.responseBody("/getAll", "Users", new ArrayList<>(Arrays.asList(userService.getAll())));
     }
 
-    @GetMapping("/getById")
-    public ResponseEntity<?> getById(@RequestParam Long reservationId) {
-        return Util.responseBody("/getById", "User", new ArrayList<>(Arrays.asList(userService.getById(reservationId))));
+    @GetMapping("/findById")
+    public ResponseEntity<?> findById(@RequestParam Long reservationId) {
+        return Util.responseBody("/findById", "User", new ArrayList<>(Arrays.asList(userService.findById(reservationId))));
     }
 
     @PostMapping("/save")
