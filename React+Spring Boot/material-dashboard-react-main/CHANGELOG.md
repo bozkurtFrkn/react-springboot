@@ -512,7 +512,7 @@ ajv                        6.9.1   →   6.10.0
   - https://github.com/creativetimofficial/material-dashboard-react/issues/38
   - https://github.com/creativetimofficial/material-dashboard-react/issues/37
 - Github enhancement issues:
-  - https://github.com/creativetimofficial/material-dashboard-react/issues/47 (read the [./README.md](./README.md) file)
+  - https://github.com/creativetimofficial/material-dashboard-react/issues/47 (read the [./README.md](README.md) file)
 
 ### Major style changes
 
